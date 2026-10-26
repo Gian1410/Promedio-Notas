@@ -40,7 +40,7 @@ function crearPromedioDiv(notasResultado,cantidadNotas){
     const promedioNotas = sumaNotas/cantidadNotas
 
     const divPromedio = document.createElement("DIV");
-    divPromedio.classList.add('promedio-total');
+    divPromedio.classList.add('alerta-exito');
     //divPromedio.textContent = promedioNotas;
     divPromedio.innerHTML = `Tu promedio es ${promedioNotas}`;
     formNotas.appendChild(divPromedio);
