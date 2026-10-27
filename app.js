@@ -44,6 +44,9 @@ function crearPromedioDiv(notasResultado,cantidadNotas){
     //divPromedio.textContent = promedioNotas;
     divPromedio.innerHTML = `Tu promedio es ${promedioNotas}`;
     formNotas.appendChild(divPromedio);
+
+    const divContenedorPromedioCurso = document.createElement("DIV");
+
 }
 
 function verificarDatos(nombre,curso){
