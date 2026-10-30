@@ -1,5 +1,5 @@
-const inputNombre = document.querySelector('#nombre-curso').value;
-const inputNombreAlumno = document.querySelector('#nombre-alumno').value;
+const inputNombre = document.querySelector('#nombre-curso');
+const inputNombreAlumno = document.querySelector('#nombre-alumno');
 
 const divNotas = document.querySelector('.registro-notas')
 
@@ -9,6 +9,12 @@ const promediar = document.querySelector('#promediar')
 const formNotas = document.querySelector('.formulario')
 
 let notasArreglo = [];
+
+let objetoNota = {
+    nombreAlumno: '',
+    nombreCurso: '',
+
+}
 
 let promedio = 0;
 let cantidadNotas = 0;
@@ -49,9 +55,15 @@ function crearPromedioDiv(notasResultado,cantidadNotas){
 
 }
 
-function verificarDatos(nombre,curso){
-    if (nombre === ' ' && curso === ' ') {
+function verificarDatos(nombre,curso,cantidad){
+    if (nombre.value === '' && curso.value === '') {
         alertaErrorDiv('Campos Vacios');
+    }else{
+        console.log(nombre,curso);
+        console.log(typeof(nombre))
+        objetoNota.nombreAlumno = nombre.value;
+        objetoNota.nombreCurso = curso.value;
+        console.log(objetoNota)
     }
 }
 
@@ -64,7 +76,7 @@ document.addEventListener('keydown', (e) => {
     //accion con enter
     if (e.key === 'Enter') {
         e.preventDefault();
-        verificarDatos(inputNombre,inputNombreAlumno);
+        verificarDatos(inputNombre,inputNombreAlumno,cantidadNotas.length);
         const nota = document.querySelectorAll('.nota');
         const nodos = Array.from(nota);
 
